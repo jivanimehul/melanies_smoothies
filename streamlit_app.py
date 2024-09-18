@@ -49,3 +49,7 @@ if ingredients_list:
         #st.success('Your Smoothie is ordered!',icon="✅")
         success_str = "Your Smoothie is ordered, " + name_on_order+ "!" 
         st.success(success_str,icon="✅")
+
+import requests
+fruitvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruitvice_response)
