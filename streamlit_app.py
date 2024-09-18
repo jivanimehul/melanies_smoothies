@@ -22,7 +22,7 @@ st.write('The name on your Smoothie will be:', name_on_order)
 cnx = st.connection("snowflake")
 #session = get_active_session()
 session = cnx.session()
-my_datafrmae = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
 #st.dataframe(data=my_datafrmae, use_container_width=True)
 #st.stop()
 
@@ -32,7 +32,7 @@ st.dataframe(pd_df)
 st.stop()
 
 ingredients_list = st.multiselect('Choose up to 5 ingredients:'
-                                  , my_datafrmae
+                                  , my_dataframe
                                   , max_selections=5)
 
 if ingredients_list:
